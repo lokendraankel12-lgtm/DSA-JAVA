@@ -1,16 +1,20 @@
-class Solution {
-    public int maxProfit(int[] prices) {
-        int minPrice = Integer.MAX_VALUE;
-        int maxProfit = 0;
-        
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minPrice) {
-                minPrice = prices[i];
-            } else if (prices[i] - minPrice > maxProfit) {
-                maxProfit = prices[i] - minPrice;
+import java.util.*;
+class Main {
+    public static int buyandsellstock(int prize[]){
+        int buyprize=Integer.MAX_VALUE;
+        int maxprofit=0;
+        for(int i=0; i<prize.length; i++){
+            if (buyprize<prize[i]){
+                int profit= prize[i]-buyprize;
+                maxprofit=Math.max(maxprofit,profit);
+            }else{
+                buyprize=prize[i];
             }
         }
-        
-        return maxProfit;
+        return maxprofit;
+    }
+    public static void main(String[] args) {
+       int prize[]={7,1,5,3,6,4};
+      System.out.println( buyandsellstock( prize));
     }
 }
