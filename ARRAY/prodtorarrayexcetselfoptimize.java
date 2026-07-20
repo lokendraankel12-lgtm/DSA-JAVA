@@ -32,3 +32,30 @@ class Solution {
         return ans;
     }
 }
+// most optimaize code means in this code we are optimize space complexity
+import java.util.*;
+
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        
+        // आंसर स्टोर करने के लिए एरे बनाया
+        int[] ans = new int[n];
+        Arrays.fill(ans, 1); // पूरे एरे को शुरुआत में 1 से भर दिया
+        
+        // 1. Prefix Loop (आगे की यात्रा - लेफ्ट साइड का गुणा)
+        for(int i = 1; i < n; i++) {
+            ans[i] = ans[i-1] * nums[i-1];
+        }
+        
+        int suffix = 1;
+        // 2. Suffix Loop (पीछे की यात्रा - राइट साइड का गुणा)
+        for(int i = n - 2; i >= 0; i--) {
+            // दोनों लाइनों का शॉर्टकट खोल दिया है:
+            suffix = suffix * nums[i+1]; 
+            ans[i] = ans[i] * suffix;
+        }
+        
+        return ans;
+    }
+}
