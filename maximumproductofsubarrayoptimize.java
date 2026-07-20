@@ -13,7 +13,7 @@ class Solution {
                 crrproduct = 1;
             }
         }
-        
+        // agr array me negative number honge to piche se loop lgega taki maximum product phle hi nikl jaye or agr array me zero hoga to uski condition already cover he 
         // 2. Right se Left multiply karo (Suffix) - Negative numbers ke liye
         crrproduct = 1;
         for (int i = nums.length - 1; i >= 0; i--) {
