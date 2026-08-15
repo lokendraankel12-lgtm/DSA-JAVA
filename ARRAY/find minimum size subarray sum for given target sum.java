@@ -1,4 +1,4 @@
-// most optimize solution by using sliding window pattern which gives o(n) time complexity
+// most optimize solution by using sliding window pattern which gives o(n) time complexity hiring and firing example of company
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
         int n= nums.length;
