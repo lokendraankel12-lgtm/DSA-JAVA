@@ -1,3 +1,4 @@
+// solving by sliding window pattern/
 import java.util.HashMap;
 
 class Solution {
